@@ -652,6 +652,7 @@ export default function Portfolio() {
               tags={["React", "Next.js", "Tailwind CSS", "Framer Motion"]}
               image="/portfolio.png?height=400&width=600"
               githubUrl="https://github.com/Kumar-s29/Kumar-s-Portfolio"
+              demoUrl="https://myportfoliosks.netlify.app/"
             />
             <ProjectCard
               title="E-commerce Website"
