@@ -544,7 +544,7 @@ export default function Portfolio() {
                 whileTap={{ scale: 0.95 }}
               >
                 <Link
-                  href="#contact"
+                  href="/KUMARA_SWAMY -3.pdf"
                   className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-teal-500 to-purple-600 hover:from-teal-600 hover:to-purple-700 text-white rounded-lg font-medium transition-all shadow-lg shadow-purple-500/20"
                 >
                   Download CV <ArrowRight size={16} />
@@ -613,43 +613,70 @@ export default function Portfolio() {
               title="Wishdom Hub"
               description="A mentorship platform connecting aspiring individuals with retired professionals for guidance and advice."
               tags={["React", "Tailwind", "Node.js", "Express", "MongoDB"]}
-              image="/placeholder.svg?height=400&width=600"
+              image="/wishdomhub.png?height=400&width=600"
               githubUrl="https://github.com/Kumar-s29/WISDOMHUB-V2"
             />
             <ProjectCard
               title="Student Learning Hub"
               description="A web platform providing educational resources to government school students with integrated modules for YouTube, Wikipedia, books, notes, and to-dos."
               tags={["HTML", "CSS", "Bootstrap", "Django"]}
-              image="/placeholder.svg?height=400&width=600"
+              image="/Student.jpg?height=400&width=600"
               githubUrl="https://github.com/Kumar-s29/Mini_Project"
             />
             <ProjectCard
               title="AI Content Generator"
               description="An AI-powered content generator using OpenAI and Gemini to automate content creation for blogs and articles."
               tags={["OpenAI", "Gemini", "MERN Stack"]}
-              image="/placeholder.svg?height=400&width=600"
+              image="/ai.png?height=400&width=600"
               githubUrl="https://github.com/Kumar-s29/AI_Content_Generator"
             />
             <ProjectCard
               title="mongo-express-init"
               description="An npm package that streamlines the process of setting up a MongoDB backend by installing essential dependencies and generating boilerplate code."
               tags={["NPM", "Node.js", "MongoDB", "Express"]}
-              image="/placeholder.svg?height=400&width=600"
+              image="/Npm.png?height=400&width=600"
               githubUrl="https://github.com/Kumar-s29/mongo-backend-kit"
+              demoUrl="https://www.npmjs.com/package/mongo-express-init"
             />
             <ProjectCard
               title="Disease Prediction System"
               description="An ML-based system that predicts whether an individual is diabetic, has heart disease, or is at risk for Parkinson's disease based on health inputs."
               tags={["Python", "Machine Learning", "Data Analysis"]}
-              image="/placeholder.svg?height=400&width=600"
+              image="/DiseasPred.png?height=400&width=600"
               githubUrl="https://github.com/Kumar-s29/Prediction_Of_Disease_OutBreaks"
+              demoUrl="https://dpbci9l6bfuk2rvbxjn2mb.streamlit.app/"
             />
             <ProjectCard
               title="Portfolio Website"
               description="A responsive portfolio website showcasing my skills, projects, and achievements using modern web technologies."
               tags={["React", "Next.js", "Tailwind CSS", "Framer Motion"]}
-              image="/placeholder.svg?height=400&width=600"
+              image="/portfolio.png?height=400&width=600"
+              githubUrl="https://github.com/Kumar-s29/Kumar-s-Portfolio"
+            />
+            <ProjectCard
+              title="E-commerce Website"
+              description="E-commerce application."
+              tags={["HTML", "CSS", "JavaScript"]}
+              image="/ecommerce.png?height=400&width=600"
               githubUrl=""
+              demoUrl="https://e-commercewebsite7.netlify.app/"
+            />
+            <ProjectCard
+              title="VIIT-E-notice Board"
+              description="A web application for displaying college notices and announcements."
+              tags={["React", "Firebase", "Tailwind CSS", "Framer Motion"]}
+              image="/Eviit.png?height=400&width=600"
+              githubUrl="https://github.com/Kumar-s29/Project---C"
+              demoUrl="https://viit-enoticeboard.onrender.com"
+            />
+            {/* Weather app */}
+            <ProjectCard
+              title="Weather App"
+              description="A web application that provides real-time weather information using OpenWeather API."
+              tags={["HTML", "CSS", "JavaScript"]}
+              image="/weather.png?height=400&width=600"
+              githubUrl="https://github.com/Kumar-s29/Weather-App"
+              demoUrl="https://weatherappsks.netlify.app/"
             />
           </div>
         </Section>
@@ -1199,12 +1226,14 @@ function ProjectCard({
   tags,
   image,
   githubUrl,
+  demoUrl,
 }: {
   title: string;
   description: string;
   tags: string[];
   image: string;
   githubUrl?: string;
+  demoUrl?: string;
 }) {
   return (
     <motion.div
@@ -1249,14 +1278,18 @@ function ProjectCard({
           ))}
         </div>
         <div className="flex gap-4">
-          <motion.div whileHover={{ y: -2 }} whileTap={{ y: 0 }}>
-            <Link
-              href="#"
-              className="text-teal-500 hover:text-teal-600 dark:hover:text-teal-400 flex items-center gap-1 text-sm font-medium"
-            >
-              Live Demo <ExternalLink size={14} />
-            </Link>
-          </motion.div>
+          {demoUrl && (
+            <motion.div whileHover={{ y: -2 }} whileTap={{ y: 0 }}>
+              <Link
+                href={demoUrl}
+                className="text-teal-500 hover:text-teal-600 dark:hover:text-teal-400 flex items-center gap-1 text-sm font-medium"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Live Demo <ExternalLink size={14} />
+              </Link>
+            </motion.div>
+          )}
           <motion.div whileHover={{ y: -2 }} whileTap={{ y: 0 }}>
             <Link
               href={githubUrl || "#"}
