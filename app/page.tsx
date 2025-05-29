@@ -728,6 +728,11 @@ export default function Portfolio() {
 
               <h3 className="text-2xl font-bold mt-12 mb-6">Certifications</h3>
               <div className="space-y-4">
+                {/* ServiceNow global Certifiaction - Certified system Adminstrator (CSA) */}
+                <CertificationCard
+                  title="Certified System Administrator (CSA) - Global Certification"
+                  issuer="ServiceNow"
+                />
                 <CertificationCard
                   title="MERN Stack Web Development"
                   issuer="Udemy"
